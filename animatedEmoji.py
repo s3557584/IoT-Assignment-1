@@ -1,18 +1,14 @@
 from emojiClass import Emoji
 from sense_hat import SenseHat
-y = (255, 255, 0) 
+yellow = (255, 255, 0)
+white = (255, 255, 255)
+blue = (0, 255, 255)
 b = (0, 0, 0)
-smiley_face = [
-	y, y, y, y, y, y, y, y,
-	y, y, y, y, y, y, y, y,
-	y, b, b, y, y, b, b, y,
-	y, b, b, y, y, b, b, y,
-	y, y, y, y, y, y, y, y,
-	y, b, b, y, y, b, b, y,
-	y, y, y, b, b, y, y, y,
-	y, y, y, y, y, y, y, y,
-	]
 sense = SenseHat()
-emoji1 = Emoji(y, b, smiley_face)
+emoji1 = Emoji(yellow, b)
+emoji2 = Emoji(white, b)
+emoji3 = Emoji(blue, b)
 emoji1.displayEmoji()
+emoji2.displayEmoji()
+emoji3.displayEmoji()
 sense.clear()
