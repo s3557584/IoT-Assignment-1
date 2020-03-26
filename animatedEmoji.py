@@ -1,14 +1,54 @@
-from emojiClass import Emoji
 from sense_hat import SenseHat
-yellow = (255, 255, 0)
-white = (255, 255, 255)
-blue = (0, 255, 255)
-b = (0, 0, 0)
+from time import sleep
 sense = SenseHat()
-emoji1 = Emoji(yellow, b)
-emoji2 = Emoji(white, b)
-emoji3 = Emoji(blue, b)
-emoji1.displayEmoji()
-emoji2.displayEmoji()
-emoji3.displayEmoji()
-sense.clear()
+class AnimatedEmoji:
+	def __init__(self, c1, c2):
+		self.c1 = c1
+		self.c2 = c2
+	
+	def displayEmoji(self):
+		smiley_face = [
+		self.c1, self.c1, self.c1, self.c1, self.c1, self.c1, self.c1, self.c1,
+		self.c1, self.c1, self.c1, self.c1, self.c1, self.c1, self.c1, self.c1,
+		self.c1, self.c2, self.c2, self.c1, self.c1, self.c2, self.c2, self.c1,
+		self.c1, self.c2, self.c2, self.c1, self.c1, self.c2, self.c2, self.c1,
+		self.c1, self.c1, self.c1, self.c1, self.c1, self.c1, self.c1, self.c1,
+		self.c1, self.c2, self.c2, self.c1, self.c1, self.c2, self.c2, self.c1,
+		self.c1, self.c1, self.c1, self.c2, self.c2, self.c1, self.c1, self.c1,
+		self.c1, self.c1, self.c1, self.c1, self.c1, self.c1, self.c1, self.c1,
+		]
+		sad_face = [
+		self.c1, self.c1, self.c1, self.c1, self.c1, self.c1, self.c1, self.c1,
+		self.c1, self.c1, self.c1, self.c1, self.c1, self.c1, self.c1, self.c1,
+		self.c1, self.c2, self.c2, self.c1, self.c1, self.c2, self.c2, self.c1,
+		self.c1, self.c2, self.c2, self.c1, self.c1, self.c2, self.c2, self.c1,
+		self.c1, self.c1, self.c1, self.c1, self.c1, self.c1, self.c1, self.c1,
+		self.c1, self.c1, self.c1, self.c2, self.c2, self.c1, self.c1, self.c1,
+		self.c1, self.c1, self.c2, self.c1, self.c1, self.c2, self.c1, self.c1,
+		self.c1, self.c2, self.c1, self.c1, self.c1, self.c1, self.c2, self.c1,
+		]
+		surprised_face = [
+		self.c1, self.c1, self.c1, self.c1, self.c1, self.c1, self.c1, self.c1,
+		self.c1, self.c1, self.c1, self.c1, self.c1, self.c1, self.c1, self.c1,
+		self.c1, self.c2, self.c2, self.c1, self.c1, self.c2, self.c2, self.c1,
+		self.c1, self.c2, self.c2, self.c1, self.c1, self.c2, self.c2, self.c1,
+		self.c1, self.c1, self.c1, self.c2, self.c2, self.c1, self.c1, self.c1,
+		self.c1, self.c1, self.c2, self.c1, self.c1, self.c2, self.c1, self.c1,
+		self.c1, self.c1, self.c2, self.c1, self.c1, self.c2, self.c1, self.c1,
+		self.c1, self.c1, self.c1, self.c2, self.c2, self.c1, self.c1, self.c1,
+		]
+		sense.set_pixels(smiley_face)
+		sleep(3)
+		sense.set_pixels(sad_face)
+		sleep(3)
+		sense.set_pixels(surprised_face)
+		sleep(3)
+	
+	def getEmoji(self):
+		return self.emoji
+	
+	def getColor1(self):
+		return self.c1
+	
+	def getColor(self):
+		return self.c2
