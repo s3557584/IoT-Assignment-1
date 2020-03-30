@@ -1,4 +1,4 @@
-# IoT-Assignment-1 (s3557584,)
+# IoT-Assignment-1 (s3557584, s3716022)
 Repository of Assignment 1 for the course Internet Of Things<br/><br/>
 This assignment has been produced in a group of two and the code used to produce this assignment is Python.<br/><br/>
 This assignment majorly focuses on producing small IoT apllications using the Raspberry Pi and the Sense Hat.<br/><br/>
