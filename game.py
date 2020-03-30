@@ -42,11 +42,20 @@ class Game:
             return True
         else:
             return False
+   
+    def displayInstructions(self):
+        sense.show_message("Welcome!")
+        sense.show_message("This is a simple two player electronic die-based game created for the Raspberry Pi")
+        sense.show_message("Each player will take turns rolling the die by shaking the Raspberry Pi")
+        sense.show_message("Whoever reaches a total score of 30 or above wins")
+        sense.show_message("Are you ready? Shake to start!!!")
+        while not self.wait_until():
+                time.sleep(0.01)
     
-    def gameLogic(self):
+    def gameLogic(self): 
         while self.player1 < 30 and self.player2 < 30:
             if self.status == True:
-                #sense.show_message("Player 1's Turn!!!")
+                sense.show_message("Player 1's Turn!!!")
                 while not self.wait_until():
                     time.sleep(0.01)
                 self.player1 = self.player1 + electronicDieObj.roll_dice()
@@ -55,7 +64,7 @@ class Game:
                 sense.clear()
                 self.status = False
             elif self.status == False:
-                #sense.show_message("Player 2's Turn!!!")
+                sense.show_message("Player 2's Turn!!!")
                 while not self.wait_until():
                     time.sleep(0.01)
                 self.player2 = self.player2 + electronicDieObj.roll_dice()
