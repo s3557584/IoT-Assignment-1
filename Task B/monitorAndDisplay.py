@@ -14,7 +14,8 @@ class monitorAndDisplay:
     def getColour(self):
         with open('config.json') as config_file:
             data = json.load(config_file)
-    
+
+        #data from json file
         cold_max = data['cold_max']
         comfortable_min = data['comfortable_min']
         comfortable_max = data['comfortable_max']
